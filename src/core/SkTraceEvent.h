@@ -98,7 +98,7 @@
     category_group_enabled = \
         reinterpret_cast<const uint8_t*>(atomic.load(std::memory_order_relaxed)); \
     if (!category_group_enabled) { \
-      category_group_enabled = TRACE_EVENT_API_GET_CATEGORY_GROUP_ENABLED(category_group); \
+      category_group_enabled = ; \
       atomic.store(reinterpret_cast<intptr_t>(category_group_enabled), \
                    std::memory_order_relaxed); \
     }
